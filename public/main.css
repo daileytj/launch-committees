@@ -1,0 +1,463 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: rgb(70, 70, 70);
+}
+
+header {
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid #979DA0;
+    width: 100%;
+    position: fixed;
+    height: 60px;
+    padding: 0 10px;
+}
+
+header img {
+    display: block;
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin: 10px 0 0 10px;
+}
+
+header h1 {
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    float: left;
+    padding: 8px 0 0 15px;
+    text-shadow: 1px 1px 1px #979DA0;
+}
+
+header a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+header nav {
+    float: right;
+    margin-right: 10px;
+}
+
+header ul a {
+    float: left;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 20px 0px 22px 5px;
+}
+
+header ul a li {
+    color: #ffffff;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+    border-radius: 10px;
+    padding: 3px 10px;
+}
+
+header ul li:hover {
+    border-bottom: 1px solid #ffffff;
+}
+
+.hidden{
+    display:none;
+}
+
+/*---------------------------------------------------------------------
+
+                        Parallax Images
+
+---------------------------------------------------------------------*/
+
+.parallax {
+    height: 700px;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg_img_1{
+    background-image: url("../images/stars.jpg");
+}
+
+.bg_img_2{
+    background-image: url("../images/color_run.jpg");
+    height: 500px;
+    position:relative;
+}
+
+.bg_img_3{
+    background-image: url("../images/worship.jpg");
+    height: 500px;
+    position: relative;
+}
+
+.committees_divider, .committees_divider2{
+    background-image: url("../images/road.jpg");
+    height:150px;
+    position:relative;
+}
+
+.committees_divider2{
+    background-image: url("../images/road.jpg");
+}
+
+.outreach_bg_img_1{
+    background-image: url("../images/outreach.jpg");
+}
+
+.welcome_bg_img_1{
+    background-image: url("../images/welcome.jpg");
+}
+
+.foundations_bg_img_1{
+    background-image: url("../images/foundations.jpg");
+}
+
+.setup_bg_img_1{
+    background-image: url("../images/setup.jpg");
+}
+
+.caption, .caption_2 {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+.caption span, .caption_2 span {
+    background-color: rgba(255, 255, 255, .7);
+    color: #000000;
+    padding: 18px 30px;
+    font-size: 25px;
+    letter-spacing: 10px;
+}
+
+/*---------------------------------------------------------------------
+
+                        BELOW THE FOLD
+
+---------------------------------------------------------------------*/
+
+.purposes_wrapper {
+    width: 100%;
+    margin: 0 auto 40px auto;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.purposes_wrapper section {
+    float: left;
+    width: 33.3%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 40px 15px 0px 15px;
+}
+
+.purposes_wrapper section img {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    height:auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 5px solid #000000;
+}
+
+.purposes_wrapper section h2, section p {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.purposes_wrapper section p {
+    font-size: 1rem;
+    line-height: 1.2rem;
+}
+
+article {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+article p {
+    padding: 50px 0 20px 0;
+    font-size: 1.2rem;
+}
+
+article a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/*----------------------------------------------------
+
+                        Committees
+
+-----------------------------------------------------*/
+
+.main_wrapper_for_committees {
+    background-color: #ffffff;
+}
+
+.committee {
+    float: none;
+    padding: 20px;
+    width: 100%;
+    background-color: #ffffff;
+    margin-top: 20px;
+}
+
+.committee_header {
+    padding-top: 20px;
+    font-size: 1.8rem;
+    color: rgb(29, 85, 150);
+    text-align: center;
+    text-shadow: 1px 1px 1px #979DA0;
+}
+
+.committee h3 {
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 20px 0 10px 0;
+}
+
+.committee p {
+    height: auto;
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    overflow: visible;
+    padding: 20px 40px;
+    text-align: justify;
+}
+
+.button_row{
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+
+.join_committee, .more_info{
+    display:inline-block;
+}
+
+.join_committee, .sign_in_button, .more_info {
+    margin: 10px auto;
+}
+
+
+
+/*----------------------------------------------------
+
+                  Mission Statement
+
+-----------------------------------------------------*/
+
+.mission_statement{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.mission_statement p{
+    padding: 10px 30px;
+}
+
+.mission_statement span{
+    padding: 15px 0;
+    display: block;
+    color: rgb(29, 85, 150);
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+}
+
+/*----------------------------------------------------
+
+                        Footer
+
+-----------------------------------------------------*/
+
+footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    padding: 30px 10px 20px 10px;
+    background: linear-gradient( to bottom, #ffffff, #979DA0);
+}
+
+footer nav img {
+    width: 50px;
+    height: 50px;
+}
+
+footer nav img:first-child {
+    margin-right: 20px;
+}
+
+footer nav img:last-child {
+    margin-left: 20px;
+}
+
+footer p {
+    margin-top: 10px;
+}
+
+
+/*---------------------------------------------------------------------
+
+                              Sign In / Sign Up / Account
+
+---------------------------------------------------------------------*/
+
+.main_wrapper_for_account, .main_wrapper_for_edit_form{
+    text-align: center;
+}
+
+.account_wrapper h2{
+    margin-bottom: 10px;
+}
+
+.edit_wrapper label{
+    text-align: left;
+}
+
+.main_wrapper_for_signin, .main_wrapper_for_signup, .main_wrapper_for_account, .main_wrapper_for_edit_form {
+    position: absolute;
+    top: 10px;
+    background: rgba(0, 0, 0, 0.7);;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    min-height: 100%;
+    overflow: auto;
+}
+
+.close_signup_form, .close_signin_form, .close_account_form, .close_edit_form{
+    text-align:right;
+
+}
+
+.close_signup_form:hover, .close_signin_form:hover, .close_account_form:hover, .close_edit_form:hover{
+    cursor: crosshair;
+}
+
+.signinheader, .signupheader, .accountheader, .editheader {
+    text-align: center;
+    padding: 15px 0;
+}
+
+.signin_wrapper, .signup_wrapper, .account_wrapper, .edit_wrapper {
+    margin: 70px auto 0 auto;
+    background-color: #ffffff;
+    border: 3px solid #000000;
+    border-radius: 10px;
+    width: 400px;
+    padding: 20px 40px;
+}
+
+input, button {
+    box-sizing: border-box;
+    border-radius: 3px;
+    height: 55px;
+    width: 220px;
+    padding: 15px;
+    border: 2px solid #000000;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+label, input, button {
+    display: block;
+    margin-top: 15px;
+}
+
+.signup_wrapper label, .signup_wrapper input, .account_wrapper label, .edit_wrapper label, .account_wrapper input, .edit_wrapper input{
+    margin-top: 5px;
+}
+
+.signup_wrapper input, .signup_wrapper button, .account_wrapper input, .edit_wrapper input, .account_wrapper button, .edit_wrapper button{
+    box-sizing: border-box;
+    border-radius: 3px;
+    height: 40px;
+    width: 320px;
+    padding: 5px;
+    border: 2px solid #000000;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+fieldset {
+    border: none;
+}
+
+.email_label, .password_label, .first_name_label, .last_name_label, .confirm_password_label{
+    font-size: 1.2rem;
+}
+
+.signin_wrapper input, .signin_wrapper button {
+    box-sizing: border-box;
+    border-radius: 3px;
+    height: 55px;
+    width: 320px;
+    padding: 15px;
+    border: 2px solid #000000;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+button {
+    background-color: #666869;
+    border-color: #000000;
+    transition-duration: .5s;
+}
+
+button:hover {
+    background-color: #000000;
+}
+
+button{
+    color: white;
+}
+
+.forgot_password {
+    color: #979DA0;
+    text-decoration: underline;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin: 10px auto 20px auto;
+}
+
+.forgot_password:hover{
+    color: #000000;
+}
+
+.signup_link, .signin_link {
+    margin: 20px auto 0 auto;
+    padding: 10px 0;
+}
+
+.signup_link a, .signup_link p, .signin_link a, .signin_link p {
+    text-align: center;
+    color: #ffffff;
+}
+
+.signup_link a:hover, .signin_link a:hover {
+    color: #888888;
+}

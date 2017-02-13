@@ -1,0 +1,38 @@
+Launch Committees (task force? crews? councils? ) App
+
+Epic: Help Launch members of The Log Church research and signup for
+committees.
+
+User Stories:
+
+1.1 As a user, I should be able to sign up for an account.
+
+1.2 As a user, I should be able to log in to my account.
+
+9 As a user, I should be able to manage my profile.
+
+2.1 As a user, I should be able to search for available committees.
+
+2.2 As a user, I should be able to sign up for available committees.
+
+9 As an admin user, I should be able to manage committees.
+
+1.3 As an admin user, I should be able to access a list of users who signed up
+for a given committee.
+
+9 As an admin user, I should be able to email users who signed up for a given
+committee.
+
+9 As an admin user, I should be able to post updates to a public message board.
+
+Defining Business Objects:
+
+- User
+--> attributes: Name, e-mail, gender, age, committees served?,
+phone number, user type(base / admin / active_admin)...
+
+- Committee
+--> attributes: Title, Summary, Members... type
+
+- Message Board
+--> attributes: committee_id

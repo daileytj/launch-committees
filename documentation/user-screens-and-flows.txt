@@ -1,0 +1,57 @@
+User Screens:
+
+- Home Screen / Landing Page
+- Log In Screen
+- Sign Up Screen
+- Personal Profile Screen
+- Committee Search Screen
+- Individual Committee Screens
+- Screen For Viewing Users Who Signed Up For Specific Committees
+- Add New Committee Screen
+
+User Flows:
+
+Home Screen / Landing Page:
+- General information displayed
+- User has access to "log in / sign up"
+- Logged in user has access to "committee list"
+- Logged in user has access to "account profile"
+- Links to "Launch Homepage" and "Launch Facebook" ??
+
+Log In Screen:
+- User enters valid "email" and "password" and clicks "submit" => Home Screen
+- User enters invalid "email" or invalid "password" and clicks "submit" => Error message to supply correct email or password
+- User clicks "set up account" => Sign Up Screen
+
+Sign Up Screen:
+- User enters unused "email" and appropriate "password / information" and clicks "submit" => Account added to db, and Log In Screen loaded
+- User enters "email" that is already taken and clicks submit => Message displayed that "email" is taken and prompted to sign in if this is their account
+- User leaves "required fields" empty => User is prompted to fill in appropriate fields
+
+Personal Profile Screen:
+- User enters updated information and clicks "save" => db updated for appropriate account
+- User clicks link to committee they are a member of => Individual committee screen
+
+Committee Search Screen:
+- All committees displayed for user to browse
+- User clicks link to committee => Individual committee screen
+- Admin user clicks link to add committee => Add new committee screen
+
+Individual Committee Screen:
+- Committee information displayed
+- User clicks "join committee" => User added to committee members db collection
+- Committee member clicks "remove me from committee" => User removed from committee members db collection
+- Committee Member names displayed
+- Admin user can edit committee information => Committee db collection updated
+- Admin user can post "message / update" => Committee message_board db collection updated
+- Admin user clicks link to "all members" => Individual committee members screen
+
+Individual Committee Members Screen:
+- Admin user can remove committee members => Selected user removed from committee members db collection
+- Admin user can view all committee member emails
+- Admin user can email individual members => Email pre-populated with member email
+- Admin user can mass email all members => Email pre-populated with all members email
+
+Add Committee Screen:
+- Admin user fills "required fields" and clicks "add committee" => Committee added to committee db collection
+- Admin user leaves "required field" blank => Admin user prompted to fill out required fields

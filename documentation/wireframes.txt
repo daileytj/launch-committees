@@ -1,0 +1,15 @@
+Wire Frames:
+
+- Home Screen / Landing Page (fullscreen):
+https://wireframe.cc/fSBuAb
+
+- Log In Screen / Sign Up Screen (fullscreen):
+https://wireframe.cc/eCixFV
+
+- Committee Search Screen (fullscreen):
+https://wireframe.cc/qIKHcn
+
+- Possible Color Schemes:
+http://paletton.com/#uid=13A0u0kwi++bu++hX++++rd++kX
+http://paletton.com/#uid=5420k0kruyoq8ZHr-Owp6nOjYcP
+http://paletton.com/#uid=53G0f0kvvS400++1SvK++pJup02 <----
