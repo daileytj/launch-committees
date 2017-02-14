@@ -6,4 +6,4 @@ deploy:
     secure: 7740a219-7774-4127-9429-8030c7fe3e70
   app: agile-shelf-18223
   on:
-    repo: agile-shelf-18223
+    repo: daileytj/launch-committees
