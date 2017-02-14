@@ -12,7 +12,7 @@ var closeAccountForm = $(".close_account_form");
 var closeEditForm = $(".close_edit_form");
 var signupSubmit = $(".signup_submit");
 var signinSubmit = $(".signin_submit");
-var accountEditButton =$(".edit_user_info");
+var accountEditButton = $(".edit_user_info");
 var saveAccountInfoButton = $(".edit_submit");
 
 

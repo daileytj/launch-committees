@@ -171,13 +171,47 @@
                 <span>SET-UP</span>
             </div>
         </div>
+        <div class="setup_todo_list">
+            <h2>Set Up List</h2>
+            <div class="add_item_field">
+                <input type="text" name="add_setup_item" value="" placeholder="Something To Do" required>
+                <button type="submit" name="add_setup_item_button">Add To List</button>
+            </div>
+            <div class="item">
+                <img src="../images/check_icon.png" alt="Check" class="toggle_check_item">
+                <p>Setup Item 1</p>
+                <img src="../images/delete_icon.png" alt="X" class="delete_item">
+            </div>
+            <div class="item">
+                <img src="../images/check_icon.png" alt="Check" class="toggle_check_item">
+                <p>Setup Item 1</p>
+                <img src="../images/delete_icon.png" alt="X" class="delete_item">
+            </div>
+        </div>
+        <div class="cleanup_todo_list">
+            <h2>Clean Up List</h2>
+            <div class="add_item_field">
+                <input type="text" name="add_cleanup_item" value="" placeholder="Something To Do" required>
+                <button type="submit" name="add_cleanup_item_button">Add To List</button>
+            </div>
+            <div class="item">
+                <img src="../images/check_icon.png" alt="Check" class="toggle_check_item">
+                <p>Cleanup Item 1</p>
+                <img src="../images/delete_icon.png" alt="X" class="delete_item">
+            </div>
+            <div class="item">
+                <img src="../images/check_icon.png" alt="Check" class="toggle_check_item">
+                <p>Cleanup Item 2</p>
+                <img src="../images/delete_icon.png" alt="X" class="delete_item">
+            </div>
+        </div>
     </div>
 
 
     <footer>
         <nav class="footer_nav">
             <a href="https://www.facebook.com/groups/474698359235036/"><img src="../images/icons/png/facebook-logo.png" alt="Facebook Icon"></a>
-            <a href="https://www.logchurchlaunch.com"><img src="../images/launch_logo.png" alt="Launch Icon"></a>
+            <a href="http://www.logchurchlaunch.com"><img src="../images/launch_logo.png" alt="Launch Icon"></a>
         </nav>
         <p>&copy; 2017 | Log Church Launch</p>
     </footer>
@@ -245,27 +279,27 @@
                     Committees Served: Outreach
                 </p>
             </div>
-            <button class = "edit_user_info">Edit</button>
+            <button class="edit_user_info">Edit</button>
         </div>
     </div>
     <!-- Account Edit Form -->
 
     <div class="main_wrapper_for_edit_form hidden" id="edit_form">
         <div class="edit_wrapper">
-            <p class = "close_edit_form">close</p>
+            <p class="close_edit_form">close</p>
             <form class="edit_form" action="/edit/" method="post">
                 <h1 class="editheader">Edit Your Info</h1>
                 <fieldset name="edit_info">
                     <label for="first_name" class="first_name_label">First Name</label>
-                    <input type="text" name="first_name" id="edit_first_name" placeholder="John"/>
+                    <input type="text" name="first_name" id="edit_first_name" placeholder="John" />
                     <label for="last_name" class="last_name_label">Last Name</label>
-                    <input type="text" name="last_name" id="edit_last_name" placeholder="Smith"/>
+                    <input type="text" name="last_name" id="edit_last_name" placeholder="Smith" />
                     <label for="email" class="email_label">Email</label>
-                    <input type="email" name="email" id="edit_email" placeholder="some-email@email.com"/>
+                    <input type="email" name="email" id="edit_email" placeholder="some-email@email.com" />
                     <label for="password" class="password_label">Password</label>
-                    <input type="password" name="password" id="edit_password" placeholder="passw0rd"/>
+                    <input type="password" name="password" id="edit_password" placeholder="passw0rd" />
                     <label for="confirm_password" class="confirm_password_label">Confirm Password</label>
-                    <input type="password" name="confirm_password" id="confirm_edit_password" placeholder="passw0rd"/>
+                    <input type="password" name="confirm_password" id="confirm_edit_password" placeholder="passw0rd" />
                 </fieldset>
                 <button type="submit" class="submit edit_submit">Save</button>
             </form>

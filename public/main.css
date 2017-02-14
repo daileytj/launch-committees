@@ -72,9 +72,10 @@ header ul li:hover {
     border-bottom: 1px solid #ffffff;
 }
 
-.hidden{
-    display:none;
+.hidden {
+    display: none;
 }
+
 
 /*---------------------------------------------------------------------
 
@@ -91,45 +92,45 @@ header ul li:hover {
     background-size: cover;
 }
 
-.bg_img_1{
+.bg_img_1 {
     background-image: url("../images/stars.jpg");
 }
 
-.bg_img_2{
+.bg_img_2 {
     background-image: url("../images/color_run.jpg");
     height: 500px;
-    position:relative;
+    position: relative;
 }
 
-.bg_img_3{
+.bg_img_3 {
     background-image: url("../images/worship.jpg");
     height: 500px;
     position: relative;
 }
 
-.committees_divider, .committees_divider2{
+.committees_divider, .committees_divider2 {
     background-image: url("../images/road.jpg");
-    height:150px;
-    position:relative;
+    height: 150px;
+    position: relative;
 }
 
-.committees_divider2{
+.committees_divider2 {
     background-image: url("../images/road.jpg");
 }
 
-.outreach_bg_img_1{
+.outreach_bg_img_1 {
     background-image: url("../images/outreach.jpg");
 }
 
-.welcome_bg_img_1{
+.welcome_bg_img_1 {
     background-image: url("../images/welcome.jpg");
 }
 
-.foundations_bg_img_1{
+.foundations_bg_img_1 {
     background-image: url("../images/foundations.jpg");
 }
 
-.setup_bg_img_1{
+.setup_bg_img_1 {
     background-image: url("../images/setup.jpg");
 }
 
@@ -149,6 +150,7 @@ header ul li:hover {
     font-size: 25px;
     letter-spacing: 10px;
 }
+
 
 /*---------------------------------------------------------------------
 
@@ -175,7 +177,7 @@ header ul li:hover {
     display: block;
     margin: 0 auto;
     width: 50%;
-    height:auto;
+    height: auto;
     border-radius: 50%;
     margin-bottom: 20px;
     border: 5px solid #000000;
@@ -206,6 +208,7 @@ article a {
     text-decoration: none;
     color: #ffffff;
 }
+
 
 /*----------------------------------------------------
 
@@ -248,21 +251,99 @@ article a {
     text-align: justify;
 }
 
-.button_row{
+.button_row {
     margin: 0 auto;
     text-align: center;
     width: 100%;
 }
 
-.join_committee, .more_info{
-    display:inline-block;
+.join_committee, .more_info {
+    display: inline-block;
 }
 
 .join_committee, .sign_in_button, .more_info {
     margin: 10px auto;
 }
 
+/*----------------------------------------------------
 
+                  SET-UP PAGE / CHECKLIST
+
+-----------------------------------------------------*/
+
+.setup_todo_list, .cleanup_todo_list{
+    margin: 10px auto;
+    border: 3px solid black;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+}
+
+.setup_todo_list h2, .cleanup_todo_list h2{
+    margin: 10px auto;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.add_item_field{
+    margin: 0 auto 30px auto;
+    width: 80%;
+}
+
+.add_item_field input{
+    display: inline-block;
+    width: 65%;
+}
+
+.add_item_field button{
+    display: inline-block;
+    width: 30%;
+}
+
+.item{
+    margin: 0 auto;
+    padding: 5px 0px;
+    width: 90%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.item p{
+    display: inline-block;
+    font-size: 1.2rem;
+    line-height: 50px;
+}
+
+.item:nth-child(2n+2){
+    background-color: #999999;
+    margin: 10px auto;
+}
+
+.toggle_check_item, .delete_item{
+    display: inline-block;
+    width:50px;
+    height:50px;
+}
+
+.toggle_check_item{
+    margin-left: 10px;
+    float:left;
+}
+
+img.toggle_check_item:hover {
+    background-color: green;
+    border-radius: 100%;
+}
+
+.delete_item{
+    margin-right: 10px;
+    float:right;
+}
+
+img.delete_item:hover {
+    background-color: red;
+    border-radius: 100%;
+}
 
 /*----------------------------------------------------
 
@@ -270,22 +351,23 @@ article a {
 
 -----------------------------------------------------*/
 
-.mission_statement{
+.mission_statement {
     margin-top: 50px;
     text-align: center;
 }
 
-.mission_statement p{
+.mission_statement p {
     padding: 10px 30px;
 }
 
-.mission_statement span{
+.mission_statement span {
     padding: 15px 0;
     display: block;
     color: rgb(29, 85, 150);
     font-size: 1.4rem;
     margin-bottom: 30px;
 }
+
 
 /*----------------------------------------------------
 
@@ -325,22 +407,23 @@ footer p {
 
 ---------------------------------------------------------------------*/
 
-.main_wrapper_for_account, .main_wrapper_for_edit_form{
+.main_wrapper_for_account, .main_wrapper_for_edit_form {
     text-align: center;
 }
 
-.account_wrapper h2{
+.account_wrapper h2 {
     margin-bottom: 10px;
 }
 
-.edit_wrapper label{
+.edit_wrapper label {
     text-align: left;
 }
 
 .main_wrapper_for_signin, .main_wrapper_for_signup, .main_wrapper_for_account, .main_wrapper_for_edit_form {
     position: absolute;
     top: 10px;
-    background: rgba(0, 0, 0, 0.7);;
+    background: rgba(0, 0, 0, 0.7);
+    ;
     width: 100%;
     margin: 0 auto;
     padding: 10px;
@@ -348,12 +431,11 @@ footer p {
     overflow: auto;
 }
 
-.close_signup_form, .close_signin_form, .close_account_form, .close_edit_form{
-    text-align:right;
-
+.close_signup_form, .close_signin_form, .close_account_form, .close_edit_form {
+    text-align: right;
 }
 
-.close_signup_form:hover, .close_signin_form:hover, .close_account_form:hover, .close_edit_form:hover{
+.close_signup_form:hover, .close_signin_form:hover, .close_account_form:hover, .close_edit_form:hover {
     cursor: crosshair;
 }
 
@@ -387,11 +469,11 @@ label, input, button {
     margin-top: 15px;
 }
 
-.signup_wrapper label, .signup_wrapper input, .account_wrapper label, .edit_wrapper label, .account_wrapper input, .edit_wrapper input{
+.signup_wrapper label, .signup_wrapper input, .account_wrapper label, .edit_wrapper label, .account_wrapper input, .edit_wrapper input {
     margin-top: 5px;
 }
 
-.signup_wrapper input, .signup_wrapper button, .account_wrapper input, .edit_wrapper input, .account_wrapper button, .edit_wrapper button{
+.signup_wrapper input, .signup_wrapper button, .account_wrapper input, .edit_wrapper input, .account_wrapper button, .edit_wrapper button {
     box-sizing: border-box;
     border-radius: 3px;
     height: 40px;
@@ -406,7 +488,7 @@ fieldset {
     border: none;
 }
 
-.email_label, .password_label, .first_name_label, .last_name_label, .confirm_password_label{
+.email_label, .password_label, .first_name_label, .last_name_label, .confirm_password_label {
     font-size: 1.2rem;
 }
 
@@ -431,7 +513,7 @@ button:hover {
     background-color: #000000;
 }
 
-button{
+button {
     color: white;
 }
 
@@ -444,7 +526,7 @@ button{
     margin: 10px auto 20px auto;
 }
 
-.forgot_password:hover{
+.forgot_password:hover {
     color: #000000;
 }
 
