@@ -277,6 +277,7 @@ article a {
     border-radius: 10px;
     text-align: center;
     width: 80%;
+    padding-bottom: 20px;
 }
 
 .setup_todo_list h2, .cleanup_todo_list h2{
