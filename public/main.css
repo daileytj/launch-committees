@@ -316,7 +316,7 @@ article a {
 }
 
 .item:nth-child(2n+2){
-    background-color: #999999;
+    background-color: #cccccc;
     margin: 10px auto;
 }
 
