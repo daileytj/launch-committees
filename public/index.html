@@ -275,19 +275,19 @@
     <div class="main_wrapper_for_signup hidden" id="signup">
         <div class="signup_wrapper">
             <p class="close_signup_form">close</p>
-            <form class="signup_form" action="/signup/" method="post">
+            <form class="signup_form" >
                 <h1 class="signupheader">Sign Up</h1>
                 <fieldset name="signup_info">
                     <label for="first_name" class="first_name_label">First Name</label>
-                    <input type="text" name="first_name" id="first_name" placeholder="John" required/>
+                    <input type="text" name="first_name" id="first_name" placeholder="John" required value="John"/>
                     <label for="last_name" class="last_name_label">Last Name</label>
-                    <input type="text" name="last_name" id="last_name" placeholder="Smith" required/>
+                    <input type="text" name="last_name" id="last_name" placeholder="Smith" required value = "smith"/>
                     <label for="email" class="email_label">Email</label>
-                    <input type="email" name="email" id="signup_email" placeholder="some-email@email.com" required />
+                    <input type="email" name="email" id="signup_email" placeholder="some-email@email.com" required value= "someemail@email.com" />
                     <label for="password" class="password_label">Password</label>
-                    <input type="password" name="password" id="signup_password" placeholder="passw0rd" required />
+                    <input type="password" name="password" id="signup_password" placeholder="password" required value = "password"/>
                     <label for="confirm_password" class="confirm_password_label">Confirm Password</label>
-                    <input type="password" name="confirm_password" id="confirm_signup_password" placeholder="passw0rd" required />
+                    <input type="password" name="confirm_password" id="confirm_signup_password" placeholder="passw0rd" required value = "password"/>
                 </fieldset>
                 <button type="submit" class="submit signup_submit">Sign Up</button>
             </form>
@@ -306,7 +306,7 @@
             <div class="user_info">
                 <p>Email: johnsmith@email.com</p>
                 <p>
-                    Committees Served: Outreach
+                    Committees Served: <a href="#" class = "outreach_more_info">Outreach</a>
                 </p>
             </div>
             <button class="edit_user_info">Edit</button>

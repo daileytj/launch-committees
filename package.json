@@ -18,9 +18,23 @@
   },
   "homepage": "https://github.com/daileytj/launch-committees/public/index.html",
   "dependencies": {
+    "bcrypt": "^1.0.2",
+    "bcryptjs": "^2.4.0",
+    "body-parser": "^1.16.1",
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
+    "cookie-parser": "^1.4.3",
+    "errorhandler": "^1.5.0",
     "express": "^4.14.1",
-    "mocha": "^3.2.0"
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.0",
+    "method-override": "^2.3.7",
+    "mocha": "^3.2.0",
+    "mongoose": "^4.8.3",
+    "morgan": "^1.8.1",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "uuid": "^3.0.1"
   }
 }

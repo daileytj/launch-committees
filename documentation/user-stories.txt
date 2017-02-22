@@ -28,8 +28,8 @@ committee.
 Defining Business Objects:
 
 - User
---> attributes: Name, e-mail, gender, age, committees served?,
-phone number, user type(base / admin / active_admin)...
+--> attributes: Name, e-mail, committees served?,
+phone number, user type(base/admin)...
 
 - Committee
 --> attributes: Title, Summary, Members... type

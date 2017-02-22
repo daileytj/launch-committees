@@ -265,13 +265,14 @@ article a {
     margin: 10px auto;
 }
 
+
 /*----------------------------------------------------
 
                   SET-UP PAGE / CHECKLIST
 
 -----------------------------------------------------*/
 
-.setup_todo_list, .cleanup_todo_list{
+.setup_todo_list, .cleanup_todo_list {
     margin: 10px auto;
     border: 3px solid black;
     border-radius: 10px;
@@ -280,28 +281,28 @@ article a {
     padding-bottom: 20px;
 }
 
-.setup_todo_list h2, .cleanup_todo_list h2{
+.setup_todo_list h2, .cleanup_todo_list h2 {
     margin: 10px auto;
     padding-top: 10px;
     text-align: center;
 }
 
-.add_item_field{
+.add_item_field {
     margin: 0 auto 30px auto;
     width: 80%;
 }
 
-.add_item_field input{
+.add_item_field input {
     display: inline-block;
     width: 65%;
 }
 
-.add_item_field button{
+.add_item_field button {
     display: inline-block;
     width: 30%;
 }
 
-.item{
+.item {
     margin: 0 auto;
     padding: 5px 0px;
     width: 90%;
@@ -309,26 +310,26 @@ article a {
     border-radius: 10px;
 }
 
-.item p{
+.item p {
     display: inline-block;
     font-size: 1.2rem;
     line-height: 50px;
 }
 
-.item:nth-child(2n+2){
+.item:nth-child(2n+2) {
     background-color: #cccccc;
     margin: 10px auto;
 }
 
-.toggle_check_item, .delete_item{
+.toggle_check_item, .delete_item {
     display: inline-block;
-    width:50px;
-    height:50px;
+    width: 50px;
+    height: 50px;
 }
 
-.toggle_check_item{
+.toggle_check_item {
     margin-left: 10px;
-    float:left;
+    float: left;
 }
 
 img.toggle_check_item:hover {
@@ -336,15 +337,16 @@ img.toggle_check_item:hover {
     border-radius: 100%;
 }
 
-.delete_item{
+.delete_item {
     margin-right: 10px;
-    float:right;
+    float: right;
 }
 
 img.delete_item:hover {
     background-color: red;
     border-radius: 100%;
 }
+
 
 /*----------------------------------------------------
 
@@ -543,4 +545,13 @@ button {
 
 .signup_link a:hover, .signin_link a:hover {
     color: #888888;
+}
+
+.user_info a {
+    text-decoration: none;
+    color: #2ecbde;
+}
+
+.user_info a:hover {
+    color: #1a737e;
 }
