@@ -15,16 +15,23 @@ const UserSchema = mongoose.Schema({
     required: true
   },
   firstName: {type: String, default: ""},
-  lastName: {type: String, default: ""}
+  lastName: {type: String, default: ""},
+  committeesServed: {type: String, default:""},
+  lead: {type: String, default: "false"},
+  member: {type: String, default: "false"}
 });
 
 UserSchema.methods.apiRepr = function() {
+  //console.log(this.lead, this.member);
   return {
     username: this.email|| '',
     id: this.id || '',
     email: this.email || '',
     firstName: this.firstName || '',
-    lastName: this.lastName || ''
+    lastName: this.lastName || '',
+    committeesServed: this.committeesServed || '',
+    lead: this.lead,
+    member: this.member
   };
 };
 

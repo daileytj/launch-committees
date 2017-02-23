@@ -55,7 +55,10 @@ UsersRouter.post('/', (req, res) => {
         email,
         password,
         firstName,
-        lastName
+        lastName,
+        committeesServed,
+        lead,
+        member
     } = req.body;
 
     if (typeof email !== 'string') {
@@ -114,7 +117,10 @@ UsersRouter.post('/', (req, res) => {
                     email: email,
                     password: hash,
                     firstName: firstName,
-                    lastName: lastName
+                    lastName: lastName,
+                    committeesServed: '',
+                    lead: false,
+                    member: false
                 });
         })
         .then(user => {
@@ -141,9 +147,19 @@ UsersRouter.get('/', (req, res) => {
         }));
 });
 
-// update user information
-LocalStrategy = require('passport-local').Strategy;
+// get for committee members
 
+UsersRouter.get('/:committeesServed', jsonParser, (req, res) => {
+    return User
+        .find({committeesServed: req.params.committeesServed})
+        .exec()
+        .then(users => res.json(users.map(user => user.apiRepr())))
+        .catch(err => console.log(err) && res.status(500).json({
+            message: 'Internal server error'
+        }));
+});
+
+// update user information
 UsersRouter.put('/:id', jsonParser, function(req, res) {
 
     User.find(function(err, items) {
@@ -152,13 +168,18 @@ UsersRouter.put('/:id', jsonParser, function(req, res) {
                 message: 'User not found.'
             });
         }
+        //console.log(req.body.id, "----",req.body.email,req.body.firstName,req.body.lastName,req.body.committeesServed,req.body.lead,req.body.member);
+
         User.update({
             id: req.body.id
         }, {
             $set: {
                 email: req.body.email,
                 firstName: req.body.firstName,
-                lastName: req.body.lastName
+                lastName: req.body.lastName,
+                committeesServed: req.body.committeesServed,
+                lead: req.body.lead,
+                member: req.body.member
             }
         }, function() {
             res.status(201).json(items);

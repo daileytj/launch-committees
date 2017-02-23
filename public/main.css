@@ -209,6 +209,10 @@ article a {
     color: #ffffff;
 }
 
+button:focus {
+    outline: none;
+}
+
 
 /*----------------------------------------------------
 
@@ -248,7 +252,7 @@ article a {
     line-height: 1.4rem;
     overflow: visible;
     padding: 20px 40px;
-    text-align: justify;
+    text-align: center;
 }
 
 .button_row {
@@ -272,12 +276,16 @@ article a {
 
 -----------------------------------------------------*/
 
+.wrapper_for_setup_committee section.committee {
+    margin-bottom: 25px;
+}
+
 .setup_todo_list, .cleanup_todo_list {
     margin: 10px auto;
     border: 3px solid black;
     border-radius: 10px;
     text-align: center;
-    width: 80%;
+    width: 85%;
     padding-bottom: 20px;
 }
 
@@ -319,6 +327,14 @@ article a {
 .item:nth-child(2n+2) {
     background-color: #cccccc;
     margin: 10px auto;
+}
+
+.list_item_checked{
+    opacity: .2;
+}
+
+.list_item_checked p{
+    text-decoration: line-through;
 }
 
 .toggle_check_item, .delete_item {

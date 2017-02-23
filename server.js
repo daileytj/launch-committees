@@ -28,11 +28,11 @@ const {
 //import router for CleanUp
 const {
     CleanUpRouter
-} = require('./clean_up_list/router');
+} = require('./clean_up_assignment_list/router');
 //import router for SetUp
 const {
     SetUpRouter
-} = require('./set_up_list/router');
+} = require('./set_up_assignment_list/router');
 
 /* STEP 2 - initialize the app*/
 var app = express();
@@ -40,9 +40,9 @@ var app = express();
 // use router for users api call
 app.use('/users', UsersRouter);
 // use router for cleanuplist api call
-app.use('/clean_up_list', CleanUpRouter);
+app.use('/clean_up_assignment_list', CleanUpRouter);
 // use router for cleanuplist api call
-app.use('/set_up_list', SetUpRouter);
+app.use('/set_up_assignment_list', SetUpRouter);
 
 // serves static files and uses json bodyparser
 app.use(bodyParser.json());
