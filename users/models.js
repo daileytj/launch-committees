@@ -22,7 +22,6 @@ const UserSchema = mongoose.Schema({
 });
 
 UserSchema.methods.apiRepr = function() {
-  //console.log(this.lead, this.member);
   return {
     username: this.email|| '',
     id: this.id || '',
