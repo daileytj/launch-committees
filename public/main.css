@@ -617,10 +617,7 @@ button {
         float: none;
         text-align: center;
     }
-/*
-    header ul:first-child{
-        margin-top: 60px;
-    }*/
+
 
     .full_nav_display{
         background-color: rgba(0,0,0,0.6);
@@ -639,6 +636,11 @@ button {
         margin-top: -5px;
     }
 
+    /*POPUPS*/
+    .signin_wrapper, .signup_wrapper, .account_wrapper, .edit_wrapper {
+    width: 100%;
+    padding: 20px 40px;
+}
     /*SET UP COMMITTEE*/
 
     .toggle_check_item, .delete_item {
