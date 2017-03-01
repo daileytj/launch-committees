@@ -57,7 +57,8 @@ SetUpRouter.post('/', (req, res) => {
         .then(hash => {
             return SetUp
                 .create({
-                    item: item
+                    item: item,
+                    checked: false
                 });
         })
         .then(item => {
@@ -78,6 +79,39 @@ SetUpRouter.get('/', (req, res) => {
         .catch(err => console.log(err) && res.status(500).json({
             message: 'Internal server error'
         }));
+});
+
+// ------------------------------------------------------------
+
+// -                 updating list item check (WIP)
+
+// ------------------------------------------------------------
+
+//
+
+//
+
+// update item
+SetUpRouter.put('/:id', jsonParser, function(req, res) {
+    console.log("updating item...");
+    SetUp.find(function(err, item) {
+        if (err) {
+            return res.status(404).json({
+                message: 'Item not found.'
+            });
+        }
+
+        SetUp.update({
+            id: req.params.id
+        }, {
+            $set: {
+                checked: req.body.checked
+            }
+        });
+        console.log(req.params.id, " updated");
+        console.log("updated items: ", item);
+        res.status(201).json(item);
+    });
 });
 
 // delete item

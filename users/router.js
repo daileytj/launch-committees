@@ -151,7 +151,9 @@ UsersRouter.get('/', (req, res) => {
 
 UsersRouter.get('/:committeesServed', jsonParser, (req, res) => {
     return User
-        .find({committeesServed: req.params.committeesServed})
+        .find({
+            committeesServed: req.params.committeesServed
+        })
         .exec()
         .then(users => res.json(users.map(user => user.apiRepr())))
         .catch(err => console.log(err) && res.status(500).json({
@@ -162,28 +164,70 @@ UsersRouter.get('/:committeesServed', jsonParser, (req, res) => {
 // update user information
 UsersRouter.put('/:id', jsonParser, function(req, res) {
 
-    User.find(function(err, items) {
+    User.find(function(err, users) {
         if (err) {
             return res.status(404).json({
                 message: 'User not found.'
             });
         }
-        //console.log(req.body.id, "----",req.body.email,req.body.firstName,req.body.lastName,req.body.committeesServed,req.body.lead,req.body.member);
+        console.log(req.params.id, "----",req.body.email,req.body.firstName,req.body.lastName,req.body.committeesServed,req.body.lead,req.body.member);
 
-        User.update({
-            id: req.body.id
-        }, {
-            $set: {
-                email: req.body.email,
-                firstName: req.body.firstName,
-                lastName: req.body.lastName,
-                committeesServed: req.body.committeesServed,
-                lead: req.body.lead,
-                member: req.body.member
-            }
-        }, function() {
-            res.status(201).json(items);
-        });
+        //fix me - post updating empty fields to null
+        if (req.body.email) {
+            User.update({
+                id: req.params.id
+            }, {
+                $set: {
+                    email: req.body.email
+                }
+            });
+        }
+        if (req.body.firstName) {
+            User.update({
+                id: req.params.id
+            }, {
+                $set: {
+                    firstName: req.body.firstName
+                }
+            });
+        }
+        if (req.body.lastName) {
+            User.update({
+                id: req.params.id
+            }, {
+                $set: {
+                    lastName: req.body.lastName
+                }
+            });
+        }
+        if (req.body.committeesServed) {
+            User.update({
+                id: req.params.id
+            }, {
+                $set: {
+                    committeesServed: req.body.committeesServed
+                }
+            });
+        }
+        if (req.body.lead) {
+            User.update({
+                id: req.params.id
+            }, {
+                $set: {
+                    lead: req.body.lead
+                }
+            });
+        }
+        if (req.body.member) {
+            User.update({
+                id: req.params.id
+            }, {
+                $set: {
+                    member: req.body.member
+                }
+            });
+        }
+        res.status(201).json(users);
     });
 });
 

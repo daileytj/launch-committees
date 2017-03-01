@@ -76,6 +76,10 @@ header ul li:hover {
     display: none;
 }
 
+.show_for_media_query{
+    display:none;
+}
+
 
 /*---------------------------------------------------------------------
 
@@ -329,11 +333,11 @@ button:focus {
     margin: 10px auto;
 }
 
-.list_item_checked{
+.list_item_checked {
     opacity: .2;
 }
 
-.list_item_checked p{
+.list_item_checked p {
     text-decoration: line-through;
 }
 
@@ -570,4 +574,110 @@ button {
 
 .user_info a:hover {
     color: #1a737e;
+}
+
+
+/*-----------------------------------------------------------
+
+                    MEDIA QUERIES
+
+-----------------------------------------------------------*/
+
+
+/*-----------------------------------------------------------
+
+                       TABLET
+
+-----------------------------------------------------------*/
+
+@media only screen and (max-width: 768px) {
+
+    /*MAIN CONTENT*/
+    .purposes_wrapper section {
+        width: 100%;
+    }
+    .purposes_wrapper section img {
+        width: 35%;
+    }
+
+    /*NAVIGATION*/
+
+    .hidden_for_media_query{
+        display:none;
+    }
+
+    .show_for_media_query{
+        display:inline-block;
+    }
+
+    header ul a {
+        float: none;
+        text-align: center;
+    }
+/*
+    header ul:first-child{
+        margin-top: 60px;
+    }*/
+
+    .full_nav_display{
+        background-color: rgba(0,0,0,0.6);
+        padding: 0 20px;
+        margin-right: 0;
+        position:fixed;
+        top:60px;
+        right:0;
+        width:100%;
+    }
+
+    .hamburger {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        margin-top: -5px;
+    }
+
+    /*SET UP COMMITTEE*/
+
+    .toggle_check_item, .delete_item {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+    .item p {
+    font-size: 1rem;
+    line-height: 50px;
+    overflow: scroll;
+    width: 70%;
+}
+.add_item_field input {
+    width: 100%;
+}
+.add_item_field button {
+    width: 60%;
+}
+}
+
+@media only screen and (max-width: 480px){
+    header a{
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+    header img {
+    width: 30px;
+    height: 30px;
+    margin: 15px 0 0 0px;
+}
+    .caption span, .caption_2 span {
+    padding: 10px 20px;
+    font-size: 16px;
+    letter-spacing: 5px;
+}
+
+.hamburger {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    margin-top: -2px;
+}
 }

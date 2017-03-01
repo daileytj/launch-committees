@@ -7,13 +7,18 @@ const SetUpSchema = mongoose.Schema({
         type: String,
         required: true,
         unique: true
+    },
+    checked:{
+      type:String,
+      default: "false"
     }
 });
 
 SetUpSchema.methods.apiRepr = function() {
     return {
         id: this.id || '',
-        item: this.item || ''
+        item: this.item || '',
+        checked: this.checked
     };
 };
 

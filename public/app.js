@@ -4,6 +4,16 @@
 
 $(document).ready(function() {
 
+
+    // Home Link / All Committees Link
+    mainLinkHandler();
+    committeeLinkHandler();
+
+    getSetupAndCleanup();
+
+});
+
+
     // page variables
     var signinPage = $("#signin");
     var signupPage = $("#signup");
@@ -113,15 +123,7 @@ $(document).ready(function() {
     showPage(welcomeCommitteeLink, welcomePage);
     showPage(foundationsCommitteeLink, foundationsPage);
     showPage(setupCommitteeLink, setupPage);
-
-    // Home Link / All Committees Link
-    mainLinkHandler();
-    committeeLinkHandler();
-
-    getSetupAndCleanup();
-
-});
-
+    
 // Create New Account
 
 // $(document).submit(".signup_form", function(event) {
@@ -213,6 +215,9 @@ function getSetupAndCleanup() {
                 rendersetuplist += '</div>';
             });
             $('.setup_item_list_container').html(rendersetuplist);
+            if (result.checked) {
+                $('.item').addClass('list_item_checked');
+            }
         })
         .fail(function(jqXHR, error, errorThrown) {
             console.log(jqXHR);
@@ -237,6 +242,9 @@ function getSetupAndCleanup() {
                 rendercleanuplist += '</div>';
             });
             $('.cleanup_item_list_container').html(rendercleanuplist);
+            if (result.checked) {
+                $('.item').addClass('list_item_checked');
+            }
         })
         .fail(function(jqXHR, error, errorThrown) {
             console.log(jqXHR);
@@ -244,11 +252,50 @@ function getSetupAndCleanup() {
             console.log(errorThrown);
         });
 }
+// ------------------------------------------------------------
+
+// -                 updating list item check (WIP)
+
+// ------------------------------------------------------------
+
+//
+
+// ------------------------------------------------------------
+
+// update list item checked? for set up list
+$(".toggle_check_item").on('click', function(event) {
+    event.preventDefault();
+    var itemToUpdate = $(this).closest(".item");
+    var itemToUpdateObject = {
+        'id': $(".item-id").val(),
+        'checked': 'true'
+    };
+    if (itemToUpdate.hasClass('list_item_checked')) {
+        itemToUpdateObject.checked = "true";
+    } else {
+        itemToUpdateObject.checked = "false";
+    }
+    $.ajax({
+            method: 'put',
+            datatType: 'json',
+            contentType: 'application/json',
+            data: JSON.stringify(itemToUpdateObject),
+            url: '/set_up_assignment_list/'
+        })
+        .done(function(result) {
+            console.log(result);
+        })
+        .fail(function(jqXHR, error, errorThrown) {
+            console.log(jqXHR);
+            console.log(error);
+            console.log(errorThrown);
+        });
+});
 
 // add item to setup/cleanup list-style
 
 // $(document).submit(".add_setup_item_form", function(event) {
-$(document).on('submit',".add_setup_item_form", function(event) {
+$(document).on('submit', ".add_setup_item_form", function(event) {
     //if the page refreshes when you submit the form use "preventDefault()" to force JavaScript to handle the form submission
     event.preventDefault();
     event.stopPropagation();
@@ -278,7 +325,7 @@ $(document).on('submit',".add_setup_item_form", function(event) {
 });
 
 // $(document).submit(".add_cleanup_item_form", function(event) {
-$(document).on('submit',".add_cleanup_item_form", function(event) {
+$(document).on('submit', ".add_cleanup_item_form", function(event) {
     //if the page refreshes when you submit the form use "preventDefault()" to force JavaScript to handle the form submission
     event.preventDefault();
     event.stopPropagation();
@@ -308,7 +355,7 @@ $(document).on('submit',".add_cleanup_item_form", function(event) {
 });
 
 // toggle item check
-$(document).on('click','.toggle_check_item',function(event){
+$(document).on('click', '.toggle_check_item', function(event) {
     event.preventDefault();
     event.stopPropagation();
     var item = $(this).closest(".item");
@@ -318,7 +365,7 @@ $(document).on('click','.toggle_check_item',function(event){
 
 // delete item from setup/cleanup list
 
-$(document).on('click','.delete_setup_item',function(event) {
+$(document).on('click', '.delete_setup_item', function(event) {
     event.preventDefault();
     event.stopPropagation();
     var item_id_to_delete = $(this).parent().find(".item-id").val();
@@ -341,7 +388,7 @@ $(document).on('click','.delete_setup_item',function(event) {
 
 });
 
-$(document).on('click','.delete_cleanup_item', function(event) {
+$(document).on('click', '.delete_cleanup_item', function(event) {
     event.preventDefault();
     event.stopPropagation();
     var item_id_to_delete = $(this).parent().find(".item-id").val();
@@ -362,4 +409,19 @@ $(document).on('click','.delete_cleanup_item', function(event) {
             console.log(errorThrown);
         });
 
+});
+
+function hideMediaNav(){
+    var nav = $('.full_nav_display');
+    if (nav.hasClass('hidden_for_media_query')) {
+        nav.removeClass('hidden_for_media_query');
+    }
+    else{
+        nav.addClass('hidden_for_media_query');
+    }
+}
+
+$('.hamburger').on('click', function(event) {
+    event.preventDefault();
+    hideMediaNav();
 });
