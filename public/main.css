@@ -591,6 +591,9 @@ button {
 -----------------------------------------------------------*/
 
 @media only screen and (max-width: 768px) {
+    .parallax{
+        background-attachment: scroll !important;
+    }
 
     /*MAIN CONTENT*/
     .purposes_wrapper section {
@@ -654,7 +657,7 @@ button {
     width: 100%;
 }
 .add_item_field button {
-    width: 60%;
+    width: 100%;
 }
 }
 
