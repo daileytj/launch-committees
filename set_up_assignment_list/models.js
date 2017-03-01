@@ -9,8 +9,8 @@ const SetUpSchema = mongoose.Schema({
         unique: true
     },
     checked:{
-      type:String,
-      default: "false"
+      type:String
+      // default: "false"
     }
 });
 

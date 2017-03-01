@@ -598,6 +598,7 @@ button {
     /*MAIN CONTENT*/
     .purposes_wrapper section {
         width: 100%;
+        padding-bottom: 20px;
     }
     .purposes_wrapper section img {
         width: 35%;
@@ -641,6 +642,10 @@ button {
     width: 100%;
     padding: 20px 40px;
 }
+
+    .signin_wrapper input, .signin_wrapper button, .signup_wrapper input, .signup_wrapper button, .account_wrapper input, .account_wrapper button, .edit_wrapper input, .edit_wrapper button{
+        width:100%;
+    }
     /*SET UP COMMITTEE*/
 
     .toggle_check_item, .delete_item {

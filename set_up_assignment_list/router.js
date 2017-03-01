@@ -93,39 +93,53 @@ SetUpRouter.get('/', (req, res) => {
 
 // update item
 SetUpRouter.put('/:id', jsonParser, function(req, res) {
-    console.log("updating item...");
-    SetUp.find(function(err, item) {
-        if (err) {
-            return res.status(404).json({
-                message: 'Item not found.'
+            console.log("updating item...");
+            // console.log(SetUp.find(req.params.id));
+            SetUp.find(function(err, items) {
+                    console.log(items);
+                    if (err) {
+                        return res.status(404).json({
+                            message: 'Item not found.'
+                        });
+                    }
+                    SetUp.update(
+                        {
+                            _id: req.params.id
+                        },
+                        {
+                            $set: {
+                                checked: req.body.checked
+                            }
+                        },
+                        function(err, result) {
+                                if (err) {
+                                    console.log(err);
+                                    res.status(500).json(err);
+                                    //res.send(err);
+                                }
+                                else if (result) {
+                                    res.status(201).json("changed");
+                                }
+                            });
+                            //res.status(201).json(items);
+                            console.log(req.body.checked);
+                            console.log(req.params.id, " updated");
+                            console.log("updated items: ", items);
+                    });
             });
-        }
 
-        SetUp.update({
-            id: req.params.id
-        }, {
-            $set: {
-                checked: req.body.checked
-            }
+        // delete item
+        SetUpRouter.delete('/:id', function(req, res) {
+            console.log(req.params.id);
+            SetUp.findByIdAndRemove(req.params.id, function(err, item) {
+                if (err)
+                    return res.status(404).json({
+                        message: 'Item not found.'
+                    });
+                res.status(201).json(item);
+            });
         });
-        console.log(req.params.id, " updated");
-        console.log("updated items: ", item);
-        res.status(201).json(item);
-    });
-});
 
-// delete item
-SetUpRouter.delete('/:id', function(req, res) {
-    console.log(req.params.id);
-    SetUp.findByIdAndRemove(req.params.id, function(err, item) {
-        if (err)
-            return res.status(404).json({
-                message: 'Item not found.'
-            });
-        res.status(201).json(item);
-    });
-});
-
-module.exports = {
-    SetUpRouter
-};
+        module.exports = {
+            SetUpRouter
+        };
