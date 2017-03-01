@@ -605,6 +605,10 @@ button {
     }
 
     /*NAVIGATION*/
+    header ul li:hover {
+        border-bottom: none;
+        color: #888888;
+    }
 
     .hidden_for_media_query{
         display:none;

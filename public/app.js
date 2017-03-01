@@ -123,7 +123,7 @@ $(document).ready(function() {
     showPage(welcomeCommitteeLink, welcomePage);
     showPage(foundationsCommitteeLink, foundationsPage);
     showPage(setupCommitteeLink, setupPage);
-    
+
 // Create New Account
 
 // $(document).submit(".signup_form", function(event) {
@@ -411,7 +411,7 @@ $(document).on('click', '.delete_cleanup_item', function(event) {
 
 });
 
-function hideMediaNav(){
+function hideAndShowMediaNav(event){
     var nav = $('.full_nav_display');
     if (nav.hasClass('hidden_for_media_query')) {
         nav.removeClass('hidden_for_media_query');
@@ -423,5 +423,5 @@ function hideMediaNav(){
 
 $('.hamburger').on('click', function(event) {
     event.preventDefault();
-    hideMediaNav();
+    hideAndShowMediaNav(event);
 });
