@@ -20,3 +20,6 @@ describe('index page', function() {
     });
   });
 });
+
+// test api endpoints
+// crud functionality for user/setup/cleanup

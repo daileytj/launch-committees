@@ -208,7 +208,7 @@ UsersRouter.put('/:id', jsonParser, function(req, res) {
 
 // delete user account
 UsersRouter.delete('/:id', function(req, res) {
-    console.log(req.params.id);
+    // console.log(req.params.id);
     User.findByIdAndRemove(req.params.id, function(err, user) {
         if (err)
             return res.status(404).json({

@@ -626,8 +626,6 @@ button {
 -----------------------------------------------------------*/
 .new_members_to_contact_list{
     width: 100%;
-    border: 2px solid black;
-    border-radius: 10px;
     margin-top: 20px;
 }
 
@@ -658,6 +656,16 @@ button {
 .new_member_to_contact img:hover{
     background-color: red;
     border-radius: 100%;
+}
+
+/*-----------------------------------------------------------
+
+                    DISABLED BUTTONS
+
+-----------------------------------------------------------*/
+
+.disabled{
+    opacity: 0.2;
 }
 
 /*-----------------------------------------------------------

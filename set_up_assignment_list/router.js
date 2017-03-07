@@ -93,10 +93,10 @@ SetUpRouter.get('/', (req, res) => {
 
 // update item
 SetUpRouter.put('/:id', jsonParser, function(req, res) {
-    console.log("updating item...");
+    // console.log("updating item...");
     // console.log(SetUp.find(req.params.id));
     SetUp.find(function(err, item) {
-        console.log(item);
+        // console.log(item);
         if (err) {
             return res.status(404).json({
                 message: 'Item not found.'
@@ -127,7 +127,7 @@ SetUpRouter.put('/:id', jsonParser, function(req, res) {
 
 // delete item
 SetUpRouter.delete('/:id', function(req, res) {
-    console.log(req.params.id);
+    // console.log(req.params.id);
     SetUp.findByIdAndRemove(req.params.id, function(err, item) {
         if (err)
             return res.status(404).json({

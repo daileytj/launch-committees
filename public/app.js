@@ -115,6 +115,7 @@ hidePage(closeSigninForm, signinPage);
 
 showPopup(signUpLink, signupPage);
 hidePage(closeSignupForm, signupPage);
+hidePage(signupSubmit,signupPage);
 // if proper information is given and form is submittable
 // do
 // hidePage(signupSubmit, signupPage);
@@ -125,7 +126,6 @@ showPopup(editMyAccountLink, editAccountPage);
 showPopup(submitEditLink, accountPage);
 hidePage(closeAccountForm, accountPage);
 hidePage(closeEditForm, editAccountPage);
-
 // Page Links
 
 showPage(outreachCommitteeLink, outreachPage);
@@ -183,9 +183,9 @@ $(".signup_form").on('submit', function(event) {
         'phoneNumber': phone_number,
         'newToLaunch': new_member
     };
-    console.log("is member: ", new_member);
-    console.log("committees served ", committees_served);
-    console.log("user object: ",userObject);
+    // console.log("is member: ", new_member);
+    // console.log("committees served ", committees_served);
+    // console.log("user object: ",userObject);
     $.ajax({
             method: 'POST',
             dataType: 'json',
@@ -194,7 +194,8 @@ $(".signup_form").on('submit', function(event) {
             url: '/users/'
         })
         .done(function(result) {
-            console.log(result);
+            // console.log(result);
+
             getNewMembers();
         })
         .fail(function(jqXHR, error, errorThrown) {
@@ -253,7 +254,7 @@ $(document).on('click', '.delete_user', function(event) {
     event.preventDefault();
     event.stopPropagation();
     var user_id_to_update = $(this).parent().find(".user-id").val();
-    console.log(user_id_to_update);
+    // console.log(user_id_to_update);
     var userToUpdateObject = {
         'id': $(this).parent().find(".user-id").val(),
         'newToLaunch': 'false',
@@ -265,7 +266,7 @@ $(document).on('click', '.delete_user', function(event) {
         'member': $(this).parent().find(".user-member").val(),
         'committeesServed': $(this).parent().find(".user-committeesServed").val(),
     };
-    console.log(userToUpdateObject);
+    // console.log(userToUpdateObject);
     $.ajax({
             method: 'PUT',
             dataType: 'json',
@@ -296,7 +297,7 @@ $(document).on('click', ".link_to_account", function(event) {
             url: '/users/'
         })
         .done(function(result) {
-            console.log(result);
+            // console.log(result);
             var renderAccountInformation = "";
             renderAccountInformation += '<p class="close_account_form">close</p>';
             renderAccountInformation += '<h1 class="accountheader">' + result[0].firstName + " " + result[0].lastName + '</h1>';
@@ -402,7 +403,7 @@ $(document).on('click', ".toggle_setup_check_item", function(event) {
     } else {
         itemToUpdateObject.checked = "true";
     }
-    console.log("item to update object", itemToUpdateObject);
+    // console.log("item to update object", itemToUpdateObject);
     $.ajax({
             method: 'put',
             datatType: 'json',
@@ -411,8 +412,8 @@ $(document).on('click', ".toggle_setup_check_item", function(event) {
             url: '/set_up_assignment_list/' + itemToUpdateObject.id
         })
         .done(function(result) {
-            console.log("results", result);
-            console.log("checked status: ", result.checked);
+            // console.log("results", result);
+            // console.log("checked status: ", result.checked);
             getSetupAndCleanup();
         })
         .fail(function(jqXHR, error, errorThrown) {
@@ -434,7 +435,7 @@ $(document).on('click', ".toggle_cleanup_check_item", function(event) {
     } else {
         itemToUpdateObject.checked = "true";
     }
-    console.log("item to update object", itemToUpdateObject);
+    // console.log("item to update object", itemToUpdateObject);
     $.ajax({
             method: 'put',
             datatType: 'json',
@@ -443,8 +444,8 @@ $(document).on('click', ".toggle_cleanup_check_item", function(event) {
             url: '/clean_up_assignment_list/' + itemToUpdateObject.id
         })
         .done(function(result) {
-            console.log("results", result);
-            console.log("checked status: ", result.checked);
+            // console.log("results", result);
+            // console.log("checked status: ", result.checked);
             getSetupAndCleanup();
         })
         .fail(function(jqXHR, error, errorThrown) {
