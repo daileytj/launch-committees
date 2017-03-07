@@ -317,6 +317,8 @@ $(document).on('click', ".link_to_account", function(event) {
 
 // Get setup/cleanup items
 
+$('.refresh_lists').on('click',getSetupAndCleanup);
+
 function getSetupAndCleanup() {
     $.ajax({
             method: 'get',

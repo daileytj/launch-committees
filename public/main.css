@@ -265,11 +265,11 @@ button:focus {
     width: 100%;
 }
 
-.join_committee, .more_info {
+.join_committee, .more_info, .refresh_lists {
     display: inline-block;
 }
 
-.join_committee, .sign_in_button, .more_info {
+.join_committee, .sign_in_button, .more_info, .refresh_lists {
     margin: 10px auto;
 }
 
