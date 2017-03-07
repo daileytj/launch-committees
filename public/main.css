@@ -522,7 +522,7 @@ fieldset {
     border: none;
 }
 
-.email_label, .password_label, .first_name_label, .last_name_label, .confirm_password_label {
+.email_label, .password_label, .first_name_label, .last_name_label, .confirm_password_label, .tel_label {
     font-size: 1.2rem;
 }
 
