@@ -592,3 +592,19 @@ $('.hamburger_close').on('click', function(event) {
     $('.hamburger').removeClass('hidden');
     hideAndShowMediaNav(event);
 });
+
+$('.link_to_mission').on('click',function(event){
+    $('.hamburger_close').addClass('hidden');
+    $('.hamburger').removeClass('hidden');
+    hideAndShowMediaNav(event);
+});
+$('.link_to_signup').on('click',function(event){
+    $('.hamburger_close').addClass('hidden');
+    $('.hamburger').removeClass('hidden');
+    hideAndShowMediaNav(event);
+});
+$('.link_to_committees').on('click',function(event){
+    $('.hamburger_close').addClass('hidden');
+    $('.hamburger').removeClass('hidden');
+    hideAndShowMediaNav(event);
+});
