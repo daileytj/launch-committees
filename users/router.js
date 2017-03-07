@@ -120,11 +120,11 @@ UsersRouter.post('/', (req, res) => {
                     password: hash,
                     firstName: firstName,
                     lastName: lastName,
-                    committeesServed: '',
-                    lead: "",
-                    member: "",
+                    committeesServed: committeesServed,
+                    lead: lead,
+                    member: member,
                     phoneNumber: phoneNumber,
-                    newToLaunch: ""
+                    newToLaunch: newToLaunch
                 });
         })
         .then(user => {

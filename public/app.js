@@ -183,7 +183,9 @@ $(".signup_form").on('submit', function(event) {
         'phoneNumber': phone_number,
         'newToLaunch': new_member
     };
-
+    console.log("is member: ", new_member);
+    console.log("committees served ", committees_served);
+    console.log("user object: ",userObject);
     $.ajax({
             method: 'POST',
             dataType: 'json',
@@ -193,6 +195,7 @@ $(".signup_form").on('submit', function(event) {
         })
         .done(function(result) {
             console.log(result);
+            getNewMembers();
         })
         .fail(function(jqXHR, error, errorThrown) {
             console.log(jqXHR);
@@ -213,13 +216,23 @@ function getNewMembers() {
         .done(function(result) {
             var renderNewMemberList = "";
             result.forEach(function(user) {
+                if(user.newToLaunch == "true"){
                 renderNewMemberList += '<div class = "new_member_to_contact">';
                 renderNewMemberList += '<input type="hidden" class="user-id" value="' + user.id + '" />';
+                renderNewMemberList += '<input type="hidden" class="user-firstName" value="' + user.firstName + '" />';
+                renderNewMemberList += '<input type="hidden" class="user-lastName" value="' + user.lastName + '" />';
+                renderNewMemberList += '<input type="hidden" class="user-email" value="' + user.email + '" />';
+                renderNewMemberList += '<input type="hidden" class="user-committeesServed" value="' + user.committeesServed + '" />';
+                renderNewMemberList += '<input type="hidden" class="user-phoneNumber" value="' + user.phoneNumber + '" />';
+                renderNewMemberList += '<input type="hidden" class="user-newToLaunch" value="' + user.newToLaunch + '" />';
+                renderNewMemberList += '<input type="hidden" class="user-lead" value="' + user.lead + '" />';
+                renderNewMemberList += '<input type="hidden" class="user-member" value="' + user.member + '" />';
                 renderNewMemberList += '<h2>' + user.firstName + ' ' + user.lastName + '</h2>';
                 renderNewMemberList += '<p>Phone Number: ' + user.phoneNumber + '</p>';
                 renderNewMemberList += '<p>Email: ' + user.email + '</p>';
                 renderNewMemberList += '<img src="../images/delete_icon.png" alt="X" class="delete_user">';
                 renderNewMemberList += '</div>';
+            }
             });
             $('.new_members_to_contact_list').html(renderNewMemberList);
         })
@@ -229,6 +242,47 @@ function getNewMembers() {
             console.log(errorThrown);
         });
 }
+
+$('.welcome_more_info').on('click', function(event){
+    event.preventDefault();
+    getNewMembers();
+});
+
+// Remove user from new members list
+$(document).on('click', '.delete_user', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    var user_id_to_update = $(this).parent().find(".user-id").val();
+    console.log(user_id_to_update);
+    var userToUpdateObject = {
+        'id': $(this).parent().find(".user-id").val(),
+        'newToLaunch': 'false',
+        'firstName': $(this).parent().find(".user-firstName").val(),
+        'lastName': $(this).parent().find(".user-lastName").val(),
+        'email': $(this).parent().find(".user-email").val(),
+        'phoneNumber': $(this).parent().find(".user-phoneNumber").val(),
+        'lead': $(this).parent().find(".user-lead").val(),
+        'member': $(this).parent().find(".user-member").val(),
+        'committeesServed': $(this).parent().find(".user-committeesServed").val(),
+    };
+    console.log(userToUpdateObject);
+    $.ajax({
+            method: 'PUT',
+            dataType: 'json',
+            contentType: 'application/json',
+            data: JSON.stringify(userToUpdateObject),
+            url: '/users/' + user_id_to_update
+        })
+        .done(function(result) {
+            getNewMembers();
+        })
+        .fail(function(jqXHR, error, errorThrown) {
+            console.log(jqXHR);
+            console.log(error);
+            console.log(errorThrown);
+        });
+
+});
 
 // Get User Details for Account Page
 

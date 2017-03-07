@@ -76,8 +76,8 @@ header ul li:hover {
     display: none;
 }
 
-.show_for_media_query{
-    display:none;
+.show_for_media_query {
+    display: none;
 }
 
 
@@ -273,6 +273,7 @@ button:focus {
     margin: 10px auto;
 }
 
+
 /*----------------------------------------------------
 
                   WELCOME PAGE
@@ -282,6 +283,7 @@ button:focus {
 .wrapper_for_welcome_committee section.committee {
     margin-bottom: 25px;
 }
+
 
 /*----------------------------------------------------
 
@@ -585,36 +587,77 @@ button {
     color: #1a737e;
 }
 
-.committee_choice_wrapper:before, .committee_choice_wrapper:after{
-    display:block;
+.committee_choice_wrapper:before, .committee_choice_wrapper:after {
+    display: block;
     content: "";
-    clear:both;
+    clear: both;
 }
 
-.committee_choice_wrapper{
-    margin-top:3px;
+.committee_choice_wrapper {
+    margin-top: 3px;
 }
 
-.committee_choice_wrapper p{
+.committee_choice_wrapper p {
     margin: 5px 0;
 }
 
-.committee_choice_wrapper input[type="checkbox"]{
-  display:inline-block;
-  margin-right: 10px;
-  float: left;
+.committee_choice_wrapper input[type="checkbox"] {
+    display: inline-block;
+    margin-right: 10px;
+    float: left;
     width: 23px;
     height: 23px;
 }
 
-.committee_choice_wrapper label{
-    display:inline-block;
-    float:left;
-    margin-left:5px;
+.committee_choice_wrapper label {
+    display: inline-block;
+    float: left;
+    margin-left: 5px;
 }
 
-.new_to_launch{
+.new_to_launch {
     margin: 10px auto;
+}
+
+/*-----------------------------------------------------------
+
+                    WELCOME PAGE
+
+-----------------------------------------------------------*/
+.new_members_to_contact_list{
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.new_member_to_contact{
+    width: 90%;
+    margin: 10px auto;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.new_member_to_contact h2{
+    padding:10px;
+    margin-bottom: 5px;
+}
+
+.new_member_to_contact p{
+    padding: 5px;
+}
+
+.new_member_to_contact img{
+    width:50px;
+    height:50px;
+    margin-top: 10px;
+}
+
+.new_member_to_contact img:hover{
+    background-color: red;
+    border-radius: 100%;
 }
 
 /*-----------------------------------------------------------
@@ -631,10 +674,9 @@ button {
 -----------------------------------------------------------*/
 
 @media only screen and (max-width: 768px) {
-    .parallax{
+    .parallax {
         background-attachment: scroll !important;
     }
-
     /*MAIN CONTENT*/
     .purposes_wrapper section {
         width: 100%;
@@ -643,106 +685,91 @@ button {
     .purposes_wrapper section img {
         width: 35%;
     }
-
     /*NAVIGATION*/
     header ul li:hover {
         border-bottom: none;
         color: #888888;
     }
-
-    .hidden_for_media_query{
-        display:none;
+    .hidden_for_media_query {
+        display: none;
     }
-
-    .show_for_media_query{
-        display:inline-block;
+    .show_for_media_query {
+        display: inline-block;
     }
-
     header ul a {
         float: none;
         text-align: center;
     }
-
-
-    .full_nav_display{
-        background-color: rgba(0,0,0,0.6);
+    .full_nav_display {
+        background-color: rgba(0, 0, 0, 0.6);
         padding: 0 20px 20px 20px;
         margin-right: 0;
-        position:fixed;
-        top:60px;
-        right:0;
-        width:100%;
+        position: fixed;
+        top: 60px;
+        right: 0;
+        width: 100%;
     }
-
     .hamburger, .hamburger_close {
         position: absolute;
         top: 0;
         right: 10px;
         margin-top: -5px;
     }
-
-    .hamburger_close img{
-    background-color: rgb(25, 161, 198);
-    border-radius: 100%;
+    .hamburger_close img {
+        background-color: rgb(25, 161, 198);
+        border-radius: 100%;
     }
-
-    .hamburger_close img:hover{
-    background-color: rgb(198, 25, 25);
-    border-radius: 100%;
+    .hamburger_close img:hover {
+        background-color: rgb(198, 25, 25);
+        border-radius: 100%;
     }
-
-
     /*POPUPS*/
     .signin_wrapper, .signup_wrapper, .account_wrapper, .edit_wrapper {
-    width: 100%;
-    padding: 20px 40px;
-}
-
-    .signin_wrapper input, .signin_wrapper button, .signup_wrapper input, .signup_wrapper button, .account_wrapper input, .account_wrapper button, .edit_wrapper input, .edit_wrapper button{
-        width:100%;
+        width: 100%;
+        padding: 20px 40px;
+    }
+    .signin_wrapper input, .signin_wrapper button, .signup_wrapper input, .signup_wrapper button, .account_wrapper input, .account_wrapper button, .edit_wrapper input, .edit_wrapper button {
+        width: 100%;
     }
     /*SET UP COMMITTEE*/
-
     .toggle_check_item, .delete_item {
-    width: 30px;
-    height: 30px;
-    margin-top: 10px;
-}
-
+        width: 30px;
+        height: 30px;
+        margin-top: 10px;
+    }
     .item p {
-    font-size: 1rem;
-    line-height: 50px;
-    overflow: scroll;
-    width: 70%;
-}
-.add_item_field input {
-    width: 100%;
-}
-.add_item_field button {
-    width: 100%;
-}
+        font-size: 1rem;
+        line-height: 50px;
+        overflow: scroll;
+        width: 70%;
+    }
+    .add_item_field input {
+        width: 100%;
+    }
+    .add_item_field button {
+        width: 100%;
+    }
 }
 
-@media only screen and (max-width: 480px){
-    header a{
+@media only screen and (max-width: 480px) {
+    header a {
         font-size: 20px;
         letter-spacing: 1px;
     }
     header img {
-    width: 30px;
-    height: 30px;
-    margin: 15px 0 0 0px;
-}
+        width: 30px;
+        height: 30px;
+        margin: 15px 0 0 0px;
+    }
     .caption span, .caption_2 span {
-    padding: 10px 20px;
-    font-size: 16px;
-    letter-spacing: 5px;
-}
-
-.hamburger, .hamburger_close {
-    position: absolute;
-    top: 0;
-    right: 10px;
-    margin-top: -2px;
-}
+        padding: 10px 20px;
+        font-size: 16px;
+        letter-spacing: 5px;
+    }
+    .hamburger, .hamburger_close {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        margin-top: -2px;
+    }
 }
