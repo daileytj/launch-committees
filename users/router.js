@@ -58,7 +58,9 @@ UsersRouter.post('/', (req, res) => {
         lastName,
         committeesServed,
         lead,
-        member
+        member,
+        phoneNumber,
+        newToLaunch
     } = req.body;
 
     if (typeof email !== 'string') {
@@ -119,8 +121,10 @@ UsersRouter.post('/', (req, res) => {
                     firstName: firstName,
                     lastName: lastName,
                     committeesServed: '',
-                    lead: false,
-                    member: false
+                    lead: "",
+                    member: "",
+                    phoneNumber: phoneNumber,
+                    newToLaunch: ""
                 });
         })
         .then(user => {
@@ -170,66 +174,37 @@ UsersRouter.put('/:id', jsonParser, function(req, res) {
                 message: 'User not found.'
             });
         }
-        console.log(req.params.id, "----",req.body.email,req.body.firstName,req.body.lastName,req.body.committeesServed,req.body.lead,req.body.member);
-
+        //console.(req.params.id, "----", req.body.email, req.body.firstName, req.body.lastName, req.body.committeesServed, req.body.lead, req.body.member, req.body.phoneNumber, req.body.newToLaunch);
         //fix me - post updating empty fields to null
-        if (req.body.email) {
-            User.update({
-                id: req.params.id
+
+        User.update({
+                _id: req.params.id
             }, {
                 $set: {
-                    email: req.body.email
+                    email: req.body.email,
+                    firstName: req.body.firstName,
+                    lastName: req.body.lastName,
+                    committeesServed: req.body.committeesServed,
+                    lead: req.body.lead,
+                    member: req.body.member,
+                    phoneNumber: req.body.phoneNumber,
+                    newToLaunch: req.body.newToLaunch
                 }
-            });
-        }
-        if (req.body.firstName) {
-            User.update({
-                id: req.params.id
-            }, {
-                $set: {
-                    firstName: req.body.firstName
+            },
+            function(err, result) {
+                if (err) {
+                    console.log(err);
+                    res.status(500).json(err);
+                    //res.send(err);
+                } else if (result) {
+                    console.log("result", result);
+                    res.status(200).json("user updated");
                 }
-            });
-        }
-        if (req.body.lastName) {
-            User.update({
-                id: req.params.id
-            }, {
-                $set: {
-                    lastName: req.body.lastName
-                }
-            });
-        }
-        if (req.body.committeesServed) {
-            User.update({
-                id: req.params.id
-            }, {
-                $set: {
-                    committeesServed: req.body.committeesServed
-                }
-            });
-        }
-        if (req.body.lead) {
-            User.update({
-                id: req.params.id
-            }, {
-                $set: {
-                    lead: req.body.lead
-                }
-            });
-        }
-        if (req.body.member) {
-            User.update({
-                id: req.params.id
-            }, {
-                $set: {
-                    member: req.body.member
-                }
-            });
-        }
-        res.status(201).json(users);
+            }
+        );
     });
 });
+
 
 // delete user account
 UsersRouter.delete('/:id', function(req, res) {

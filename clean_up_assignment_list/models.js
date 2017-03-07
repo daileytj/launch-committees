@@ -10,7 +10,7 @@ const CleanUpSchema = mongoose.Schema({
     },
     checked:{
       type: String,
-      default: "false"
+      // default: "false"
     }
 });
 
@@ -18,7 +18,7 @@ CleanUpSchema.methods.apiRepr = function() {
     return {
         id: this.id || '',
         item: this.item || '',
-        checked: this.item
+        checked: this.checked
     };
 };
 

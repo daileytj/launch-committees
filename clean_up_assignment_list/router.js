@@ -57,7 +57,8 @@ CleanUpRouter.post('/', (req, res) => {
         .then(hash => {
             return CleanUp
                 .create({
-                    item: item
+                    item: item,
+                    checked: false
                 });
         })
         .then(item => {
@@ -78,6 +79,50 @@ CleanUpRouter.get('/', (req, res) => {
         .catch(err => console.log(err) && res.status(500).json({
             message: 'Internal server error'
         }));
+});
+
+// ------------------------------------------------------------
+
+// -                 updating list item check (WIP)
+
+// ------------------------------------------------------------
+
+//
+
+//
+
+// update item
+CleanUpRouter.put('/:id', jsonParser, function(req, res) {
+    console.log("updating item...");
+    // console.log(CleanUp.find(req.params.id));
+    CleanUp.find(function(err, item) {
+        console.log(item);
+        if (err) {
+            return res.status(404).json({
+                message: 'Item not found.'
+            });
+        }
+        CleanUp.update({
+                _id: req.params.id
+            }, {
+                $set: {
+                    checked: req.body.checked
+                }
+            },
+            function(err, result) {
+                if (err) {
+                    console.log(err);
+                    res.status(500).json(err);
+                    //res.send(err);
+                } else if (result) {
+                    res.status(201).json("item check status updated");
+                }
+            });
+        //res.status(201).json(items);
+        console.log(req.body.checked);
+        console.log(req.params.id, " updated");
+        console.log("updated items: ", item);
+    });
 });
 
 // delete item

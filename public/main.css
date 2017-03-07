@@ -273,6 +273,15 @@ button:focus {
     margin: 10px auto;
 }
 
+/*----------------------------------------------------
+
+                  WELCOME PAGE
+
+-----------------------------------------------------*/
+
+.wrapper_for_welcome_committee section.committee {
+    margin-bottom: 25px;
+}
 
 /*----------------------------------------------------
 
@@ -576,6 +585,37 @@ button {
     color: #1a737e;
 }
 
+.committee_choice_wrapper:before, .committee_choice_wrapper:after{
+    display:block;
+    content: "";
+    clear:both;
+}
+
+.committee_choice_wrapper{
+    margin-top:3px;
+}
+
+.committee_choice_wrapper p{
+    margin: 5px 0;
+}
+
+.committee_choice_wrapper input[type="checkbox"]{
+  display:inline-block;
+  margin-right: 10px;
+  float: left;
+    width: 23px;
+    height: 23px;
+}
+
+.committee_choice_wrapper label{
+    display:inline-block;
+    float:left;
+    margin-left:5px;
+}
+
+.new_to_launch{
+    margin: 10px auto;
+}
 
 /*-----------------------------------------------------------
 
@@ -626,7 +666,7 @@ button {
 
     .full_nav_display{
         background-color: rgba(0,0,0,0.6);
-        padding: 0 20px;
+        padding: 0 20px 20px 20px;
         margin-right: 0;
         position:fixed;
         top:60px;
@@ -634,12 +674,23 @@ button {
         width:100%;
     }
 
-    .hamburger {
+    .hamburger, .hamburger_close {
         position: absolute;
         top: 0;
         right: 10px;
         margin-top: -5px;
     }
+
+    .hamburger_close img{
+    background-color: rgb(25, 161, 198);
+    border-radius: 100%;
+    }
+
+    .hamburger_close img:hover{
+    background-color: rgb(198, 25, 25);
+    border-radius: 100%;
+    }
+
 
     /*POPUPS*/
     .signin_wrapper, .signup_wrapper, .account_wrapper, .edit_wrapper {
@@ -688,10 +739,10 @@ button {
     letter-spacing: 5px;
 }
 
-.hamburger {
+.hamburger, .hamburger_close {
     position: absolute;
     top: 0;
-    right: 0px;
+    right: 10px;
     margin-top: -2px;
 }
 }

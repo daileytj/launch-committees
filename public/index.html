@@ -24,10 +24,15 @@
         <img src="../images/launch_arrow_white.png" alt="Launch Arrow Logo" />
         <h1><a href="index.html" class = "launch_page_heading">Launch Committees</a></h1>
         <nav class="header_nav">
-            <ul class = "show_for_media_query">
+            <ul class="show_for_media_query">
                 <a href="" class="hamburger">
                     <li>
-                        <img src="../images/rocket2.png" alt="hamburger" />
+                        <img src="../images/rocket2.png" alt="hamburger icon" />
+                    </li>
+                </a>
+                <a href="" class="hamburger_close hidden">
+                    <li>
+                        <img src="../images/delete_icon.png" alt="close dropdown menu icon" />
                     </li>
                 </a>
             </ul>
@@ -38,12 +43,17 @@
                             Committees
                         </li>
                     </a>
-                    <a href="#account" class="link_to_account">
+                    <a href="#mission_statement" class="link_to_mission">
+                        <li>
+                            Mission
+                        </li>
+                    </a>
+                    <a href="#account" class="link_to_account hidden">
                         <li>
                             Account
                         </li>
                     </a>
-                    <a href="#signin" class="link_to_signin">
+                    <a href="#signin" class="link_to_signin hidden">
                         <li>
                             Sign In
                         </li>
@@ -101,7 +111,8 @@
             <section class="committee">
                 <h2 class="committee_header">Welcome</h2>
                 <p class="committee_summary_text">
-                    Under Construction
+                    Remember the first time you came to Launch? There are so many people, and so many things going on that it can be overwhelming. The Welcome Committee is committed to helping new members get connected and feel welcome in our group. If you love people and
+                    want to reach out to these new members to help them become part of our community join us now!
                 </p>
                 <div class="button_row">
                     <button type="button" name="more_info" class="more_info welcome_more_info">More Info</button>
@@ -134,7 +145,7 @@
             </section>
         </div>
         <div class="parallax bg_img_3"></div>
-        <article class="mission_statement">
+        <article id="mission_statement" class="mission_statement">
             <p>Launch Committees were established as a way to better reach out to, and connect with the local community, as well as stretch and grow Launch members in their relationships, and faith in Jesus Christ.</p>
             <p>Be part of something bigger by working out God's commission for us to make disciples, and <span>"Win One More."</span> Are You Ready To Be Different?</p>
             <button type="button" class="sign_in_button"><a href="#signin" class = "link_to_signup">Sign Up Now</a></button>
@@ -159,6 +170,18 @@
                 <span>WELCOME</span>
             </div>
         </div>
+        <section class="committee">
+            <p class="committee_summary_text">
+                Remember the first time you came to Launch? There are so many people, and so many things going on that it can be overwhelming. The Welcome Committee is committed to helping new members get connected and feel welcome in our group. If you love people and
+                want to reach out to these new members to help them become part of our community join us now!
+            </p>
+            <div class="button_row">
+                <button type="button" name="join_committee" class="join_committee">Join</button>
+            </div>
+            <div class = "new_members_to_contact_list">
+                
+            </div>
+        </section>
     </div>
 
     <!-- Foundations Committee -->
@@ -235,8 +258,8 @@
                     <label for="password" class="password_label">Password</label>
                     <input type="password" name="password" id="password" placeholder="passw0rd" required />
                 </fieldset>
-                <button type="submit" class="submit signin_submit">Sign In</button>
-                <a class="forgot_password" href="/forgot-password/new">Forgot Password?</a>
+                <button type="submit" class="submit signin_submit" disabled="true">Sign In</button>
+                <a class="forgot_password hidden" href="/forgot-password/new">Forgot Password?</a>
             </form>
         </div>
         <div class="signup_link">
@@ -258,10 +281,33 @@
                     <input type="text" name="last_name" id="last_name" placeholder="Smith" required value="smith" />
                     <label for="email" class="email_label">Email</label>
                     <input type="email" name="email" id="signup_email" placeholder="some-email@email.com" required value="someemail@email.com" />
+                    <label for="tel" class="tel_label">Phone Number</label>
+                    <input type="tel" name="tel" id="tel" placeholder="555-867-5309" required value="555-867-5309" />
+                    <div class="committee_choice_wrapper">
+                        <p>Committees To Join:</p>
+                        <input type="checkbox" name="committee_to_join" value="outreach" id="committee_to_join_outreach">
+                        <label for="committee_to_join_outreach" class="committee_to_join_outreach" >Outreach</label>
+                    </div>
+                    <div class="committee_choice_wrapper">
+                        <input type="checkbox" name="committee_to_join" value="welcome" id="committee_to_join_welcome">
+                        <label for="committee_to_join_welcome" class="committee_to_join_welcome" >Welcome</label>
+                    </div>
+                    <div class="committee_choice_wrapper">
+                        <input type="checkbox" name="committee_to_join" value="foundations" id="committee_to_join_foundations">
+                        <label for="committee_to_join_foundations" class="committee_to_join_foundations">Foundations</label>
+                    </div>
+                    <div class="committee_choice_wrapper">
+                        <input type="checkbox" name="committee_to_join" value="setup" id="committee_to_join_setup">
+                        <label for="committee_to_join_setup" class="committee_to_join_setup">Setup</label>
+                    </div>
                     <label for="password" class="password_label">Password</label>
                     <input type="password" name="password" id="signup_password" placeholder="password" required value="password" />
                     <label for="confirm_password" class="confirm_password_label">Confirm Password</label>
                     <input type="password" name="confirm_password" id="confirm_signup_password" placeholder="passw0rd" required value="password" />
+                    <div class="committee_choice_wrapper new_to_launch">
+                        <input type="checkbox" name="new_member" id="new_member" />
+                        <label for="new_member" class="new_member_label">New To Launch?</label>
+                    </div>
                 </fieldset>
                 <button type="submit" class="submit signup_submit">Sign Up</button>
             </form>

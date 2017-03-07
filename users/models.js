@@ -16,9 +16,11 @@ const UserSchema = mongoose.Schema({
   },
   firstName: {type: String, default: ""},
   lastName: {type: String, default: ""},
-  committeesServed: {type: String, default:""},
-  lead: {type: String, default: "false"},
-  member: {type: String, default: "false"}
+  committeesServed: {type: String},
+  lead: {type: String},
+  member: {type: String},
+  phoneNumber: {type:String},
+  newToLaunch: {type: String}
 });
 
 UserSchema.methods.apiRepr = function() {
@@ -30,7 +32,9 @@ UserSchema.methods.apiRepr = function() {
     lastName: this.lastName || '',
     committeesServed: this.committeesServed || '',
     lead: this.lead,
-    member: this.member
+    member: this.member,
+    phoneNumber: this.phoneNumber,
+    newToLaunch: this.newToLaunch
   };
 };
 
