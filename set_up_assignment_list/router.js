@@ -119,9 +119,9 @@ SetUpRouter.put('/:id', jsonParser, function(req, res) {
                 }
             });
         //res.status(201).json(items);
-        console.log(req.body.checked);
-        console.log(req.params.id, " updated");
-        console.log("updated items: ", item);
+        // console.log(req.body.checked);
+        // console.log(req.params.id, " updated");
+        // console.log("updated items: ", item);
     });
 });
 
