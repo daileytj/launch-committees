@@ -2,9 +2,7 @@
 
 Thinkful Unit 2 Capstone - Full Stack application to supply committee specific tools for Launch committees.
 
-![Screenshots](https://github.com/daileytj/launch-committees/tree/master/public/images/launch_committees_mac_product_screenshots.jpg)
-![Screenshots](https://github.com/daileytj/launch-committees/tree/master/public/images/launch-committees-screenshot-web.png)
-![Screenshots](https://github.com/daileytj/launch-committees/tree/master/public/images/launch-committees-screenshot-web.png)
+![Screenshots](https://cloud.githubusercontent.com/assets/13989985/23731100/7197c06a-0439-11e7-9cdf-374b578f98f9.jpg)
 
 ## Overview
 
