@@ -14,28 +14,28 @@ const UsersRouter = express.Router();
 UsersRouter.use(jsonParser);
 
 
-const strategy = new BasicStrategy(
-    (email, password, cb) => {
-        User
-            .findOne({
-                email
-            })
-            .exec()
-            .then(user => {
-                if (!user) {
-                    return cb(null, false, {
-                        message: 'Incorrect email'
-                    });
-                }
-                if (user.password !== password) {
-                    return cb(null, false, 'Incorrect password');
-                }
-                return cb(null, user);
-            })
-            .catch(err => cb(err));
-    });
-
-passport.use(strategy);
+// const strategy = new BasicStrategy(
+//     (email, password, cb) => {
+//         User
+//             .findOne({
+//                 email
+//             })
+//             .exec()
+//             .then(user => {
+//                 if (!user) {
+//                     return cb(null, false, {
+//                         message: 'Incorrect email'
+//                     });
+//                 }
+//                 if (user.password !== password) {
+//                     return cb(null, false, 'Incorrect password');
+//                 }
+//                 return cb(null, user);
+//             })
+//             .catch(err => cb(err));
+//     });
+//
+// passport.use(strategy);
 
 
 UsersRouter.post('/', (req, res) => {
@@ -77,25 +77,25 @@ UsersRouter.post('/', (req, res) => {
         });
     }
 
-    if (!(password)) {
-        return res.status(422).json({
-            message: 'Missing field: password'
-        });
-    }
+    // if (!(password)) {
+    //     return res.status(422).json({
+    //         message: 'Missing field: password'
+    //     });
+    // }
+    //
+    // if (typeof password !== 'string') {
+    //     return res.status(422).json({
+    //         message: 'Incorrect field type: password'
+    //     });
+    // }
 
-    if (typeof password !== 'string') {
-        return res.status(422).json({
-            message: 'Incorrect field type: password'
-        });
-    }
-
-    password = password.trim();
-
-    if (password === '') {
-        return res.status(422).json({
-            message: 'Incorrect field length: password'
-        });
-    }
+    // password = password.trim();
+    //
+    // if (password === '') {
+    //     return res.status(422).json({
+    //         message: 'Incorrect field length: password'
+    //     });
+    // }
 
     // check for existing user
     return User
@@ -117,7 +117,7 @@ UsersRouter.post('/', (req, res) => {
             return User
                 .create({
                     email: email,
-                    password: hash,
+                    // password: hash,
                     firstName: firstName,
                     lastName: lastName,
                     committeesServed: committeesServed,
@@ -219,36 +219,36 @@ UsersRouter.delete('/:id', function(req, res) {
 });
 
 // NB: at time of writing, passport uses callbacks, not promises
-const basicStrategy = new BasicStrategy(function(email, password, callback) {
-    let user;
-    User
-        .findOne({
-            email: email
-        })
-        .exec()
-        .then(_user => {
-            user = _user;
-            if (!user) {
-                return callback(null, false, {
-                    message: 'Incorrect email'
-                });
-            }
-            return user.validatePassword(password);
-        })
-        .then(isValid => {
-            if (!isValid) {
-                return callback(null, false, {
-                    message: 'Incorrect password'
-                });
-            } else {
-                return callback(null, user);
-            }
-        });
-});
+// const basicStrategy = new BasicStrategy(function(email, password, callback) {
+//     let user;
+//     User
+//         .findOne({
+//             email: email
+//         })
+//         .exec()
+//         .then(_user => {
+//             user = _user;
+//             if (!user) {
+//                 return callback(null, false, {
+//                     message: 'Incorrect email'
+//                 });
+//             }
+//             return user.validatePassword(password);
+//         })
+//         .then(isValid => {
+//             if (!isValid) {
+//                 return callback(null, false, {
+//                     message: 'Incorrect password'
+//                 });
+//             } else {
+//                 return callback(null, user);
+//             }
+//         });
+// });
 
 
-passport.use(basicStrategy);
-UsersRouter.use(passport.initialize());
+// passport.use(basicStrategy);
+// UsersRouter.use(passport.initialize());
 
 module.exports = {
     UsersRouter
