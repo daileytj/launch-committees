@@ -2,9 +2,9 @@
 
 Thinkful Unit 2 Capstone - Full Stack application to supply committee specific tools for Launch committees.
 
-![Screenshots](https://github.com/daileytj/launch-committees/tree/master/public/images/launch_committees_mac_product_screenshots.jpg)
-![Screenshots](https://github.com/daileytj/launch-committees/tree/master/public/images/launch-committees-screenshot-web.png)
-![Screenshots](https://github.com/daileytj/launch-committees/tree/master/public/images/launch-committees-screenshot-web.png)
+![Screenshots](http://github.com/daileytj/launch-committees/tree/master/public/images/launch_committees_mac_product_screenshots.jpg)
+![Screenshots](http://github.com/daileytj/launch-committees/tree/master/public/images/launch-committees-screenshot-web.png)
+![Screenshots](http://github.com/daileytj/launch-committees/tree/master/public/images/launch-committees-screenshot-web.png)
 
 ## Overview
 
@@ -19,7 +19,10 @@ Why is this app useful? As a member of the Launch community there are many speci
 
 The initial wireframes can be seen below:
 
-update--> ![Initial Wireframes]()
+- Home Screen / Landing Page (fullscreen):
+![Initial Wireframes](http://wireframe.cc/fSBuAb)
+- Log In Screen / Sign Up Screen (fullscreen):
+![Initial Wireframes](http://wireframe.cc/eCixFV)
 
 The app has been designed with a focus on strong, impactful, emotional driven photography used as background images. This page has been themed around the idea of "Launch," a community build to prepare young adults to "Launch" into the next season of their lives. The home screen displays many welcoming images as well as a summary of our mission. By selecting more information on any of the committee summaries, a user will be connected to the specific committee page, allowing the user to make use of custom applications within each committee.
 
