@@ -145,8 +145,8 @@ $(".signup_form").on('submit', function(event) {
     var first_name = $('#first_name').val();
     var last_name = $('#last_name').val();
     var signup_email = $('#signup_email').val();
-    var signup_password = $('#signup_password').val();
-    var confirm_signup_password = $('#confirm_signup_password').val();
+    // var signup_password = $('#signup_password').val();
+    // var confirm_signup_password = $('#confirm_signup_password').val();
     var phone_number = $('#tel').val();
     var new_member = "";
 
@@ -176,7 +176,7 @@ $(".signup_form").on('submit', function(event) {
         'firstName': first_name,
         'lastName': last_name,
         'email': signup_email,
-        'password': signup_password,
+        // 'password': signup_password,
         'committeesServed': committees_served,
         'lead': "false",
         'member': "true",
