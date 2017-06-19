@@ -668,6 +668,10 @@ button {
     opacity: 0.2;
 }
 
+.disabled{
+  display:none;
+}
+
 /*-----------------------------------------------------------
 
                     MEDIA QUERIES
